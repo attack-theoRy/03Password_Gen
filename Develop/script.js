@@ -31,33 +31,41 @@ function generatePassword(passLength, isUppercase, isLowercase, isNumbers, isSpe
     passwordString += numbers;
 
   if(isSpecial)
-    password += specialChars;
+    passwordString += specialChars;
+
+    var userPassword = ''
       
 
-  for(var i=0; i < passLength; i++)
+   for(var i=0; i < passLength; i++)
   {
-    var 
+    userPassword += passwordString.charAt(Math.floor(Math.random() * passwordString.length))
   }
-*/
 
+  return userPassword
+  
 }
-
 
 // Write password to the #password input
 function writePassword() {
 
-  var passLength = parse(prompt("How long would you like the password to be? 8-128"))
+  var passLength = parseInt(prompt("How long would you like the password to be? 8-128"))
   isUppercase = confirm("Use uppercase? Ok for yes, cancel for No")
   isLowercase = confirm("Use lowercase? Ok for yes, cancel for No")
   isNumbers = confirm("Use Numbers? Ok for yes, cancel for No")
   isSpecial = confirm("Use special characters? Ok for yes, cancel for No")
 
-  var password = generatePassword(pass));
+  if(!isUppercase && !isLowercase && !isNumbers && !isSpecial)
+  {
+    alert("You haven't selected any criteria")
+  }
+  else
+  {
+  var password = generatePassword(passLength, isUppercase, isLowercase, isNumbers, isSpecial);
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
+  }
 
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword());
