@@ -12,28 +12,11 @@
       <header>
         <h1>Password Generator</h1>
       </header>
+      <script src="script.js">
+        var length = prompt("How long should the password be? 8-128", "Choose between 8 and 128 " )
+        /*if( <)8?
 
-      <!--Conditionals to decide what type of password-->
-      <div class="control">
-        <h2>What would you like in your password?</h2>
-
-        <input type="checkbox" id="lowercheck">
-        <label class="check-label" for="lowercase"><span class="checkbox">Lowercase Characters</span></label>
-      </div>
-      <div class="control">
-        <input type="checkbox" id="uppercase">
-        <label class="check-label" for="uppercase"><span class="checkbox">Uppercase Characters</span></label>
-      </div>
-      <div class="control">
-        <input type="checkbox" id="numbers">
-        <label class="check-label" for="numbers"><span class="checkbox">Numbers</span></label>
-      </div>
-
-      <div class="control">
-        <input type="checkbox" id="specialChar">
-        <label class="check-label" for="specialChar"><span class="checkbox">Special characters</span></label>
-      </div>
-
+      </script>
 
       <div class="card">
         <div class="card-header">
@@ -52,6 +35,10 @@
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+      document.getElementById("generate").addEventListener("click", writePassword)
+
+    </script>
+    </script>
   </body>
 </html>

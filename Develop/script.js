@@ -17,16 +17,42 @@ isSpecial = document.getElementById("specialChar")
 
 
 /* Create Password function given the conditionals */
-function generatePassword()
+function generatePassword(passLength, isUppercase, isLowercase, isNumbers, isSpecial)
 {
+  passwordString = '';
+  if(isUppercase)
+    passwordString += uppercase;
+    else{}
+
+  if(isLowercase)
+    passwordString += lowercase;
+
+  if(isNumbers)
+    passwordString += numbers;
+
+  if(isSpecial)
+    password += specialChars;
+      
+
+  for(var i=0; i < passLength; i++)
+  {
+    var 
+  }
+*/
 
 }
 
 
-
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+
+  var passLength = parse(prompt("How long would you like the password to be? 8-128"))
+  isUppercase = confirm("Use uppercase? Ok for yes, cancel for No")
+  isLowercase = confirm("Use lowercase? Ok for yes, cancel for No")
+  isNumbers = confirm("Use Numbers? Ok for yes, cancel for No")
+  isSpecial = confirm("Use special characters? Ok for yes, cancel for No")
+
+  var password = generatePassword(pass));
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
