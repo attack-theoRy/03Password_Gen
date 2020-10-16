@@ -14,6 +14,9 @@ function generatePassword(passLength, isUppercase, isLowercase, isNumbers, isSpe
   // set variable for possible password string
   passwordString = '';
 
+  // 
+  var userPassword = ''
+
   // arrary of guaranteed characters
   guaranteedChars = ''
 
@@ -34,8 +37,6 @@ function generatePassword(passLength, isUppercase, isLowercase, isNumbers, isSpe
   // add special characters if chosen 
   if(isSpecial)
     passwordString += specialChars;
-
-    var userPassword = ''
       
 
   // Logic for password generation
@@ -62,12 +63,12 @@ function generatePassword(passLength, isUppercase, isLowercase, isNumbers, isSpe
 
   if(isNumbers)
   {
-    userPassword[2] = numbers.charAt(Math.floor(Math.random()*numbers.length))
+    userPassword[2] = numbers.charAt(Math.floor(Math.random()* numbers.length))
   }
 
   if(isSpecial)
   {
-    userPassword[3] = specialChars.charAt(Math.floor(Math.random()*specialChars.length))
+    userPassword[3] = specialChars.charAt(Math.floor(Math.random() *specialChars.length))
   }
 
   return userPassword
@@ -77,13 +78,21 @@ function generatePassword(passLength, isUppercase, isLowercase, isNumbers, isSpe
 // Write password to the #password input
 function writePassword() {
 
-  // ask for length of desired password
-  var passLength = parseInt(prompt("How long would you like the password to be? 8-128"))
+// ask for length of desired password
+if("number" !== typeof(prompt("How long would you like the password to be? 8-128")))
+  alert("That's not an integer")
+
+// ask about how to check for a number
+
+var passLength = parseInt(prompt("How long would you like the password to be? 8-128"))
+if(typeof(passLength) != "number")
+  alert("That's not an integer")
   
   // check to make sure the password is within range
   while((passLength > 128) || (passLength < 8))
   {
     passLength = parseInt(prompt("That's out of range, please select a number between 8 and 128"))
+    
   }
 
   // ask if they want to use uppercase in the desired password
