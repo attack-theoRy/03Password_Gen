@@ -1,2 +1,6 @@
 # Password_Gen
- javascript password generator
+ Javascript password generator
+
+Pirooz Wallace
+10/17/20
+
