@@ -14,9 +14,14 @@ function generatePassword(passLength, isUppercase, isLowercase, isNumbers, isSpe
   // set variable for possible password string
   passwordString = '';
 
+  // arrary of guaranteed characters
+  guaranteedChars = ''
+
   // add uppercase characters if chosen
   if(isUppercase)
+  {
     passwordString += uppercase;
+  }
 
   // add lowercase characters if chosen
   if(isLowercase)
@@ -38,6 +43,31 @@ function generatePassword(passLength, isUppercase, isLowercase, isNumbers, isSpe
   {
     // add a random variable
     userPassword += passwordString.charAt(Math.floor(Math.random() * passwordString.length))
+  }
+
+  // force characters from criteria into password
+  var replaceRandomIndex;
+  
+  if(isUppercase)
+  {
+    //replaceRandomIndex = Math.floor(Math.random()*passLength) - 1
+    userPassword[replaceRandomIndex] = uppercase.charAt(Math.floor(Math.random() * uppercase.length))
+  }
+
+  if(isLowercase)
+  {
+    //replaceRandomIndex = Math.floor(Math.random()*passLength) - 1
+    userPassword[1] = lowercase.charAt(Math.floor(Math.random() * lowercase.length))
+  }
+
+  if(isNumbers)
+  {
+    userPassword[2] = numbers.charAt(Math.floor(Math.random()*numbers.length))
+  }
+
+  if(isSpecial)
+  {
+    userPassword[3] = specialChars.charAt(Math.floor(Math.random()*specialChars.length))
   }
 
   return userPassword
