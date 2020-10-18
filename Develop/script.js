@@ -43,25 +43,25 @@ function generatePassword(passLength, isUppercase, isLowercase, isNumbers, isSpe
     userPassword += passwordString.charAt(Math.floor(Math.random() * passwordString.length))
   }
 
-  // force characters from criteria into password, hardcoded
+  // force characters from criteria into password
   if(isUppercase)
   {
-    userPassword[0] = uppercase.charAt(Math.floor(Math.random() * uppercase.length))
+    userPassword[userPassword.length-4] = uppercase.charAt(Math.floor(Math.random() * uppercase.length))
   }
 
   if(isLowercase)
   {
-    userPassword[2] = lowercase.charAt(Math.floor(Math.random() * lowercase.length))
+    userPassword[userPassword.length-3] = lowercase.charAt(Math.floor(Math.random() * lowercase.length))
   }
 
   if(isNumbers)
   {
-    userPassword[4] = numbers.charAt(Math.floor(Math.random()* numbers.length))
+    userPassword[userPassword.length-2] = numbers.charAt(Math.floor(Math.random()* numbers.length))
   }
 
   if(isSpecial)
   {
-    userPassword[6] = specialChars.charAt(Math.floor(Math.random() *specialChars.length))
+    userPassword[userPassword.length-1] = specialChars.charAt(Math.floor(Math.random() *specialChars.length))
   }
 
   return userPassword
@@ -73,6 +73,17 @@ function writePassword() {
 
 // ask for length
 var passLength = parseInt(prompt("How long would you like the password to be? 8-128"))
+
+/*  attempt to check for whether character is number or string
+if(typeof(passLength) === "number")
+{
+  passLength = parseInt(prompt("How long would you like the password to be? 8-128"))
+}
+else
+{
+  alert("not a number")
+}
+*/
   
   // check to make sure the password is within range
   while((passLength > 128) || (passLength < 8))
