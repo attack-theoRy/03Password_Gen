@@ -5,6 +5,8 @@ Pirooz Wallace
 
 Contact Info: PiroozWallace@outlook.com
 
+LinkedIn: www.linkedin.com/in/piroozwallace
+
 GitHub Repo:
 https://github.com/attack-theoRy/03Password_Gen
 
@@ -29,7 +31,7 @@ Creates a random password between 8 and 128 characters long using criteria from 
 MIT License
 -----------
 
-Copyright (c) 2020 Pirooz Wallace (https://attack-theory.github.io/Portfolio/cards/index.html)
+Copyright (c) 2020 Pirooz Wallace (https://attack-theory.github.io/Portfolio/index.html)
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
 files (the "Software"), to deal in the Software without
